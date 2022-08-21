@@ -1,0 +1,39 @@
+{% extends "base.njk" %}
+
+{% block content %}
+    <div id="leaderboard">
+        <h2 class="title">leaderboards</h2>
+        <hr width="25%" color="green" align="right" />
+        {# top 5 games #}
+        {% if topUsers %}
+            <div class="l-board">
+                <h3 class="title">top users</h3>
+                {% for user in topUsers %}
+                    <div class="data-row">
+                        <p class="loop-index">{{ loop.index }}</p>
+                        <p><span class="title">username:</span> {{ user.username }}</p>
+                        <p><span class="title">total games:</span> {{ user.games | length }}</p>
+                        <p><span class="title">total score:</span> {{ user.totalScore }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {# top 5 users #}
+        {% if topUsers %}
+            <div class="l-board">
+                <h3 class="title">top games</h3>
+                {% for game in topGames %}
+                    <div class="data-row">
+                        <p class="loop-index">{{ loop.index }}</p>
+                        <p><span class="title">username:</span> {{ game.username }}</p>
+                        <p><span class="title">speed:</span> {{ game.maxSpeed }}</p>
+                        <p><span class="title">time:</span> {{ game.totalTime }}</p>
+                        <p><span class="title">length:</span> {{ game.snakeLength }}</p>
+                        <p><span class="title">score:</span> {{ game.finalScore }}</p>
+                        <p><span class="title date">{{ game.date | parseDate }}</span></p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

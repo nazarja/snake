@@ -1,0 +1,64 @@
+{% extends "base.njk" %}
+
+{% block content %}
+    <div id="about">
+        <div id="container">
+            <h1 class="title">about</h1>
+            <hr width="25%" color="green" align="right" />
+            <section>
+                <h2 class="title">controls</h2>
+                <div>
+                    <img id="keys" src="public/images/keys.png" />
+                </div>
+                <p class="description">
+                    The snakes head will follow the last arrow key pressed.
+                </p>
+            </section>
+            <hr width="10%" color="gray" align="right" />
+            <section>
+                <h2 class="title">game rules</h2>
+                <p class="description">
+                    Scoring is calculated as <code>(apples * length) - seconds</code>.
+                    The goal is to get the highest score possible. Your score will increase with each apple eaten.
+                    The game speed/interval will increase in varying amount depnding on the length of the snake.
+            </section>
+            <hr width="10%" color="gray" align="right" />
+            <section>
+                <h2 class="title">development</h2>
+                <p id="dev-intro" class="description">
+                    Built in vanilla javascript without any back or front end frameworks.
+                </p>
+                <div class="description">
+                    <p>
+                        <span class="highlight">server</span>
+                        <span>node.js [vanilla]</span>
+                    </p>
+                    <p>
+                        <span class="highlight">frontend</span>
+                        <span>javascript [vanilla]</span>
+                    </p>
+                    <p>
+                        <span class="highlight">database</span>
+                        <span>mongodb</span>
+                    </p>
+                    <p>
+                        <span class="highlight">styling</span>
+                        <span>scss, css</span>
+                    </p>
+                    <p>
+                        <span class="highlight">templating</span>
+                        <span>nunjucks</span>
+                    </p>
+                    <p>
+                        <span class="highlight">hashing</span>
+                        <span>bcrypt</span> 
+                    </p>
+                    <p>
+                        <span class="highlight">npm</span>
+                        <span>concurrently, nodemon, chalk, moment</span>
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}

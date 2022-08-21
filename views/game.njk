@@ -1,0 +1,40 @@
+{% extends "base.njk" %}
+
+{% block content %}
+    {# start game #}
+    <div id="game-start">
+        <button id="play-button">PLAY</button>
+        <div id="fake-board"></div>
+    </div>
+    {# game #}
+    <div id="game-content">
+        <div id="game-controls">
+            <button id="quit-button">quit game</button>
+        </div>
+        <div id="info">
+            <span>score: <b id="score">0</b></span> 
+            <span>length: <b id="length">4</b></span> 
+            <span>speed: <b id="speed">300</b> ms</span> 
+            <span>time: <b id="time">0:00</b></span> 
+        </div>
+        <div id="board"></div>
+        <div id="game-over">
+            <h4>Game Over</h4>
+            <div id="game-results">
+               <div>
+                   <span>total score: <b id="gr-score"></b></span>
+                   <span>snake length: <b id="gr-length"></b></span>
+               </div>
+               <div>
+                   <span>total time: <b id="gr-time"></b></span>
+                   <span>max speed: <b id="gr-speed"></b> ms</span>
+                </div>
+            </div>
+            <button id="restart-button">play again</button>
+        </div>
+    </div>    
+{% endblock %}
+
+{% block scripts %}
+    <script src="public/scripts/main.js" type="module"></script>
+{% endblock %}      

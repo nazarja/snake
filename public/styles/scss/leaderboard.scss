@@ -1,0 +1,26 @@
+
+#leaderboard {
+    @extend %center;
+    flex-direction: column;
+    margin: auto auto 40px auto;
+    width: 80vw;
+    max-width: 800px;
+
+    h2 {
+        width: 100%;
+        text-align: right;
+        margin:  40px 0;
+        
+        &:first-of-type {
+            margin: 50px 0 20px;
+        }
+    }
+
+    .title {
+        color: $grey;
+    }
+
+    .l-board {
+        @extend %tableData;
+    }
+}

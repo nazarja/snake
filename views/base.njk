@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    {% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="public/images/favicon.png">
+    <link href="public/styles/css/main.css" rel="stylesheet">
+    <title>SNAKE</title>
+</head>
+<body>
+    {# header #}
+    {% include "./_partials/_header.njk" %}
+
+    {# content #}
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {# footer #}
+    {% include "./_partials/_footer.njk" %}
+
+    {# scripts #}
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>

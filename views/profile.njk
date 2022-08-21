@@ -1,0 +1,11 @@
+{% extends "base.njk" %}
+
+{% block content %}
+    <div id="profile">
+        {% if user %}
+            {% include "./_partials/_game-data.njk" %}
+        {% else %}
+            {% include "./_partials/_form.njk" %}
+        {% endif %}
+    </div>
+{% endblock %}

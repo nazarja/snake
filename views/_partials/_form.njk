@@ -1,0 +1,19 @@
+<div id="form-page">
+    <div id="form-info">
+        <h3>Sign up...</h3>
+        <p>Don't have an account? Create one!</p>
+        <h3>Sign In...</h3>
+        <p>Already have an account? Sign in!</p>
+    </div>
+    <hr color="green" />
+    <form action="/profile" method="POST">
+        <label for="username">username</label>
+        <input type="text" placeholder="username" name="username"minlength="4" autocomplete="off" required/>
+        <label for="username">password</label>
+        <input type="password" placeholder="password" name="password" minlength="4" autocomplete="off" required/>
+        <input type="submit" value="submit" />
+    </form>
+    {% if errors %}
+        <p class="errors">error, please try again..</p>
+    {% endif %}
+</div>

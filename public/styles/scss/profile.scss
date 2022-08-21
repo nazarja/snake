@@ -1,0 +1,61 @@
+#profile {
+    @extend %center;
+    flex-direction: column;
+    margin: 40px auto;
+}
+
+#profile {
+    #form-page {
+        #form-info {
+            margin-bottom: 20px;
+
+            h3 {
+                color: $white;
+            }
+
+            p {
+                color: $darkgrey;
+            }
+        }
+
+        hr {
+            width: 50%;
+            margin: 30px auto;
+        }
+
+        label {
+            display: inline-block;
+            color: $grey;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            display: block;
+            margin-bottom: 15px;
+            text-align: center;
+            border-radius: 5px;
+            border: 1px solid transparent;
+            min-height: 30px;
+        }
+
+        input[type="submit"] {
+            margin: 30px 0 25px;
+            background-color: $green;
+            color: $white;
+            box-shadow: $shadow;
+            transition: 0.4s;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $darkgreen;
+            }
+        }
+    }
+}
+
+#profile {
+    #game-data {
+        @extend %tableData;
+    }
+}

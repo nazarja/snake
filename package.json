@@ -1,0 +1,39 @@
+{
+  "name": "snake",
+  "version": "1.0.0",
+  "description": "A snake game built with Node.js, Nunjucks, SCSS and MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "watch-files": "nodemon -e njk,css,js",
+    "watch-sass": "sass --no-source-map --watch public/styles/scss/main.scss:public/styles/css/main.css",
+    "start:dev": "concurrently \"npm:watch-files\" \"npm:watch-sass\"",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nazarja/snake.git"
+  },
+  "author": "Sean Murphy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nazarja/snake/issues"
+  },
+  "homepage": "https://github.com/nazarja/snake#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "chalk": "^4.0.0",
+    "concurrently": "^7.3.0",
+    "dotenv": "^16.0.1",
+    "moment": "^2.29.4",
+    "mongodb": "^4.8.1",
+    "nunjucks": "^3.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19",
+    "sass": "^1.54.4"
+  },
+  "engines": {
+    "node": "16.14.2",
+    "npm": "8.5.0"
+  }
+}

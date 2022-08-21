@@ -1,0 +1,26 @@
+<header>
+    <nav class="flex-layout">
+        <h1><a href="/">Snake</a></h1>
+        <ul>
+            <li class="{% if active === 'game' %}active{% endif %}">
+                <a href="/">game</a>
+            </li>
+            <li class="{% if active === 'about' %}active{% endif %}">
+                <a href="/about">about</a>
+            </li>
+            <li class="{% if active === 'profile' %}active{% endif %}">
+                <a href="/profile">profile</a>
+            </li>
+            <li class="{% if active === 'leaderboard' %}active{% endif %}">
+                <a href="/leaderboard">leaderboard</a>
+            </li>
+            {% if user %}
+                <li title="logout" id="logout">
+                    <a href="/logout">
+                        <img src="public/images/key.png" />
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>

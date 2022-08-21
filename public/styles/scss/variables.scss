@@ -1,0 +1,124 @@
+$shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+$white: whitesmoke;
+$red: crimson;
+$green: green;
+$darkgreen: darkgreen;
+$darkergreen: #014e19;
+$specialgreen: #01a11c;
+$black: #1A1E23;
+$grey: grey;
+$darkgrey: darkgrey;
+$darkergrey: #585858;
+
+%center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+%flex-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+%font-style {
+    font-weight: 400;
+    letter-spacing: .1em;
+    font-size: 13px;
+}
+
+%heading {
+    color: $green;
+    font-family: 'Press Start 2P';
+    text-shadow: $shadow;
+    margin: 0;
+}
+
+%font-style {
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    font-size: 13px;
+}
+
+
+%board {
+    border: 10px solid $green;
+    border-radius: 10px;
+    width: 80vw;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    box-shadow: $shadow;
+}
+
+%cell {
+    border: 1px solid #444;
+    padding-top: calc(100% - 2px);
+    display: inline-block;
+    font-size: 5px;
+}
+
+%tableData {
+
+    text-align: right;
+
+    h2 {
+        font-size: 1.3em;
+
+        .title {
+            color: $darkgrey;
+        }
+    }
+
+    .data-row {
+        display: flex;
+        border: 1px solid dimgrey;
+        width: 80vw;
+        max-width: 800px;
+        justify-content: space-around;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 3px;
+
+        .loop-index {
+            color: antiquewhite;
+        }
+
+        p {
+            @extend %font-style;
+            display: inline-block;
+
+
+            .title {
+                color: $specialgreen;
+                font-weight: bold;
+            }
+
+            .date {
+                color: $darkgrey;
+            }
+
+            @media (max-width: 500px) {
+                display: block;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 500px) {
+            display: block;
+            text-align: center;
+        }
+
+    }
+
+    .data-row:nth-of-tyodd(even) {
+        background-color: #222;
+    }
+
+    .data-row:nth-of-type(even) {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}

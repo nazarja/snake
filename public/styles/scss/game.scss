@@ -1,0 +1,172 @@
+#game-start,
+#game-content {
+    @extend %center;
+}
+
+#game-start, #game-content {
+    button {
+        font-size: 2.5em;
+        padding: 10px 20px;
+        background-color: $green;
+        color: $white;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        transition: .3;
+        box-shadow: $shadow;
+
+        &:hover {
+            box-shadow: unset;
+            cursor: pointer;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 1.3em;
+        }
+    }
+}
+
+#game-start {
+    position: relative;
+
+    button {
+        position: absolute;
+        opacity: 1;
+        z-index: 2;
+    }
+
+    #fake-board {
+        @extend %board;
+        opacity: .2;
+
+        .cell {
+            @extend %cell;
+        }
+    }
+}
+
+#game-content {
+    display: none;
+    flex-direction: column;
+    padding: 30px 15px;
+
+    #game-controls {
+        width: 80vw;
+        max-width: 600px;
+        text-align: end;
+        margin-bottom: 15px;
+
+        button {
+            font-size: .7em;
+            background-color: $darkergreen;
+            transition: .7s;
+
+            &:hover {
+                background-color: $red;
+            }
+    
+            @media (max-width: 500px) {
+                font-size: .6em;
+            }
+        }
+    }
+
+    #info {
+        @extend %flex-between;
+        font-size: 1em;
+        opacity: .75;
+        padding: 15px 20px;
+        width: 80vw;
+        max-width: 600px;
+        border: 1px solid transparent;
+        box-shadow: $shadow;
+        margin-bottom: 15px;
+        border-radius: 10px;
+
+        span {
+            @extend %font-style;
+            color: darkgray;
+
+            b {
+                font-size: .8em;
+                color: $white;
+
+                @media (max-width: 450px) {
+                    display: block;
+                }
+            }
+        }
+
+    }
+
+    #board {
+        @extend %board;
+
+        .cell {
+            @extend %cell;
+        }
+
+        .apple {
+            background-color: $red;
+        }
+
+        .snake {
+            background-color: $green;
+        }
+
+        .head {
+            background-color: $darkgreen;
+        }
+    }
+
+    #game-over {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        background-color: $black;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        box-shadow: $shadow;
+        padding: 20px 40px; 
+        max-width: 80vw;
+
+        h4 {
+            @extend %heading;
+            text-align: center;
+        }
+
+        #game-results {
+            div {
+                display: flex;
+                justify-content: space-between;
+            }
+            span {
+                display: inline-block;
+                padding: 10px;
+                
+                b {
+                    color: $green;
+                }
+            }
+
+        }
+        
+        button {
+            font-size: 0.9em;
+            background-color: $darkergreen;
+            transition: 0.7s;
+            margin: 15px auto 0;
+            display: block;
+            
+            &:hover {
+                background-color: $green;
+            }
+    
+            @media (max-width: 500px) {
+                font-size: .6em;
+            }
+        }
+    }
+}

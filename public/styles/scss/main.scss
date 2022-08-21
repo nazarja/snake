@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Press+Start+2P&display=swap');
+
+@import 'variables';
+@import 'navbar';
+@import 'game';
+@import 'about';
+@import 'profile';
+@import 'leaderboard';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background: $black;
+    font-family: 'Lato', sans-serif;
+    color: $white;
+}
+
+main {
+    display: flex;
+    align-items: stretch;
+    flex-grow: 1;
+}
+
+.errors {
+    color: $white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 3px solid #ed143d8a;
+    text-align: center;
+    height: 40px;
+}
+
+#_404 {
+    @extend %center;
+    font-size: 35vmin;
+
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: $black;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: darkgreen;
+}

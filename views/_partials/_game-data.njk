@@ -1,0 +1,25 @@
+<div id="game-data">
+    <h2><span class="title">profile:</span> {{ gameData.username }}</h2>
+    
+    {% if gameData %}
+        {% if gameData.games | length > 0 %}
+            <h2><span class="title">games played:</span> {{ gameData.games | length }}</h2>
+            <h2><span class="title">total score:</span> {{ gameData.totalScore }}</h2>
+
+            {% for game in gameData.games | reverse %}
+                <div class="data-row">
+                    <p><span class="title">username:</span> {{ game.username }}</p>
+                    <p><span class="title">speed:</span> {{ game.maxSpeed }}</p>
+                    <p><span class="title">time:</span> {{ game.totalTime }}</p>
+                    <p><span class="title">length:</span> {{ game.snakeLength }}</p>
+                    <p><span class="title">score:</span> {{ game.finalScore }}</p>
+                    <p><span class="title date">{{ game.date | parseDate }}</span></p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Nothing to see here, play a game first!</p>
+        {% endif %}
+    {% else %}
+        <p>Nothing to see here, move along!</p>
+    {% endif %}
+</div>
